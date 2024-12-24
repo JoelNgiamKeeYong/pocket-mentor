@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors'); // Import CORS
 const app = express();
-const port = 5000; // Port for your API
+const port = process.env.PORT || 5000; // use Heroku’s environment variable for the port or 5000
 
 // Use CORS middleware
 app.use(cors());
