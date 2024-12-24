@@ -5,7 +5,9 @@ const app = express();
 const port = process.env.PORT || 5000; // use Heroku’s environment variable for the port or 5000
 
 // Use CORS middleware
-app.use(cors());
+app.use(cors({
+    origin: '*' // Allow all origins (you can specify a domain here if needed)
+}));
 app.use(express.json());
 
 const HF_API_KEY = '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'; // Get your API key from Hugging Face

@@ -28,9 +28,12 @@ export default function HomeScreen() {
     try {
       setIsTyping(true); // Show typing indicator when waiting for AI response
 
-      const response = await axios.post("http://192.168.0.151:5000/chat", {
-        message: userMessage,
-      });
+      const response = await axios.post(
+        "https://pocket-mentor-backend.herokuapp.com/chat",
+        {
+          message: userMessage,
+        }
+      );
 
       const botMessage =
         response.data.message || "Sorry, I didn't understand that.";
